@@ -1,0 +1,15 @@
+version: 2
+
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "{{cookiecutter.hackathon_repo_name}}/.github/workflows"
+    schedule:
+      interval: daily
+    allow:
+      - dependency-type: all
+    open-pull-requests-limit: 10
+    pull-request-branch-name:
+      separator: "-"
+    commit-message:
+      prefix: "CI: "
+      include: "scope"
